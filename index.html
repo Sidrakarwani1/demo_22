@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+</head>
+<body>
+    
+    <br>
+
+  <label for="Search">Search</label>
+  <input type="text" id="search"></input>
+  <br>
+  <br>
+  <table border=<"1">
+      <thead>
+          <tr>
+              <th>pic1</th>
+              <th>pic2</th>
+              <th>pic3</th>
+          </tr>
+      </thead>
+      <tr>
+          <td>animal</td>
+          <td>bird</td>
+          <td>plants</td>
+      </tr>
+      <tr>
+        <td>Lion</td>
+        <td>parrot</td>
+        <td>eucliptus</td>
+    </tr>
+
+    </body>
+</table>
+<script>
+
+$(document).ready(function(){
+    $("#search").keyup(function(){
+        var searchval=$("#search").val();
+        $("tbody tr").filter(function(){
+       $(this).toggle($(this).text().indexOf(searchval)>-1);
+        
+    });
+    });
+});
+</script>
+</html>
